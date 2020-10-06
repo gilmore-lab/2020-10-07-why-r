@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Why R (we here)?</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="generator" content="pandoc" />
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <base target="_blank">
+
+  <script type="text/javascript">
+    var SLIDE_CONFIG = {
+      // Slide settings
+      settings: {
+                title: 'Why R (we here)?',
+                        subtitle: 'I/O brown bag',
+                useBuilds: true,
+        usePrettify: true,
+        enableSlideAreas: true,
+        enableTouch: true,
+                        favIcon: 'img/psu-psych.png',
+              },
+
+      // Author information
+      presenters: [
+            {
+        name:  'Rick Gilmore' ,
+        company: '',
+        gplus: '',
+        twitter: '',
+        www: '',
+        github: ''
+      },
+            ]
+    };
+  </script>
+
+  <script src="libs/header-attrs-2.3/header-attrs.js"></script>
+  <link href="libs/ioslides-13.5.1/fonts/fonts.css" rel="stylesheet" />
+  <link href="libs/ioslides-13.5.1/theme/css/default.css" rel="stylesheet" />
+  <link href="libs/ioslides-13.5.1/theme/css/phone.css" rel="stylesheet" />
+  <script src="libs/ioslides-13.5.1/js/modernizr.custom.45394.js"></script>
+  <script src="libs/ioslides-13.5.1/js/prettify/prettify.js"></script>
+  <script src="libs/ioslides-13.5.1/js/prettify/lang-r.js"></script>
+  <script src="libs/ioslides-13.5.1/js/prettify/lang-yaml.js"></script>
+  <script src="libs/ioslides-13.5.1/js/hammer.js"></script>
+  <script src="libs/ioslides-13.5.1/js/slide-controller.js"></script>
+  <script src="libs/ioslides-13.5.1/js/slide-deck.js"></script>
+
+  <style type="text/css">
+
+    b, strong {
+      font-weight: bold;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    summary {
+      display: list-item;
+    }
+
+    slides > slide {
+      -webkit-transition: all 0.4s ease-in-out;
+      -moz-transition: all 0.4s ease-in-out;
+      -o-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .auto-fadein {
+      -webkit-transition: opacity 0.6s ease-in;
+      -webkit-transition-delay: 0.4s;
+      -moz-transition: opacity 0.6s ease-in 0.4s;
+      -o-transition: opacity 0.6s ease-in 0.4s;
+      transition: opacity 0.6s ease-in 0.4s;
+      opacity: 0;
+    }
+/* https://github.com/ropensci/plotly/pull/524#issuecomment-468142578 */
+slide:not(.current) .plotly.html-widget{
+  display: block;
+}
+
+    slides > slide:not(.nobackground):before {
+      font-size: 12pt;
+      content: "";
+      position: absolute;
+      bottom: 20px;
+      left: 60px;
+      background: url(img/psu-psych.png) no-repeat 0 50%;
+      -webkit-background-size: 30px 30px;
+      -moz-background-size: 30px 30px;
+      -o-background-size: 30px 30px;
+      background-size: 30px 30px;
+      padding-left: 40px;
+      height: 30px;
+      line-height: 1.9;
+    }
+  </style>
+
+  <link rel="stylesheet" href="css/ioslides-wide.css" type="text/css" />
+
+</head>
+
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide segue nobackground">
+        <aside class="gdbar"><img src="img/psu-psych.png"></aside>
+        <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+            <p style="margin-top: 6px; margin-left: -2px;">2020-10-06 14:46:16</p>
+          </hgroup>
+  </slide>
+
+<slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Preliminaries</h2></hgroup><article  id="preliminaries">
+
+</article></slide><slide class=""><hgroup><h2>Agenda</h2></hgroup><article  id="agenda">
+
+<ul>
+<li>Aspirations, realities, &amp; behavior change</li>
+<li>Databrary</li>
+<li>Toward a more perfect workflow</li>
+<li>Why R?</li>
+<li>How R</li>
+</ul>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Aspirations, realities, &amp; behavior change</h2></hgroup><article  id="aspirations-realities-behavior-change">
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/66oNv_DJuPc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>
+
+<p><a href='https://www.youtube.com/embed/66oNv_DJuPc' title=''>https://www.youtube.com/embed/66oNv_DJuPc</a></p>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<p><img src="https://mathshistory.st-andrews.ac.uk/Biographies/Feynman/thumbnail.jpg" style="display: block; margin: auto;" /></p>
+
+<blockquote>
+<p>&ldquo;<em>The first principle is that you must not fool yourself, and you are the easiest one to fool.</em>&rdquo; </br>– Richard P. Feynmann</p>
+</blockquote>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<p><img src="https://www.rd.com/wp-content/uploads/2017/02/01-How-Bad-is-it-to-Share-a-Toothbrush-159311405-ABykov-760x506.jpg" style="display: block; margin: auto;" /></p>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<blockquote>
+<p>&ldquo;<em>…psychologists tend to treat other peoples’ theories like toothbrushes; no self-respecting individual wants to use anyone else’s.</em>&rdquo; </br> </br><a href='https://www.psychologicalscience.org/observer/becoming-a-cumulative-science' title=''>Mischel, 2009</a></small></p>
+</blockquote>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<blockquote>
+<p>&ldquo;<em>The toothbrush culture undermines the building of a genuinely cumulative science, encouraging more parallel play and solo game playing, rather than building on each other’s directly relevant best work.</em>&rdquo; </br> </br> <a href='https://www.psychologicalscience.org/observer/becoming-a-cumulative-science' title=''>Mischel, 2009</a></p>
+</blockquote>
+
+</article></slide><slide class=""><hgroup><h2>Open science accelerates discovery</h2></hgroup><article  id="open-science-accelerates-discovery">
+
+<ul>
+<li>Shows your work</li>
+<li>Data + analysis code + tasks</li>
+<li>What’s the effect size for… </br></li>
+</ul>
+
+<p><img src="img/stroop-effect-google-scholar.png" width="600px" style="display: block; margin: auto;" /></p>
+
+</article></slide><slide class=""><hgroup><h2>Closed science <em>slows</em> discovery</h2></hgroup><article  id="closed-science-slows-discovery">
+
+<ul>
+<li>Wastes energy, time, money</li>
+<li>Hasn’t somebody tried X before?</li>
+<li>How big is the &lsquo;file drawer effect&rsquo;?</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<div style="text-align: center" class="figure">
+<img src="img/rosenthal-1979-file-drawer-problem.png" alt="[[@Rosenthal1979-zi]](https://doi.org/10.1037/0033-2909.86.3.638)" width="900px" />
+
+<p class="caption">
+
+<a href='https://doi.org/10.1037/0033-2909.86.3.638' title=''><span class="cite">(Rosenthal, 1979)</span></a>
+
+</p></div>
+
+</article></slide><slide class=""><hgroup><h2>Open science strengthens inference</h2></hgroup><article  id="open-science-strengthens-inference">
+
+<ul>
+<li>Improves reproducibility</li>
+<li>Reveals errors faster</li>
+<li>Permits verification, re-analysis; strengthens meta-analysis</li>
+<li>Boosts sample sizes &amp; increases power</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Closed science <em>weakens</em> inference</h2></hgroup><article  class="smaller" id="closed-science-weakens-inference">
+
+<div class="centered">
+<p><img src="https://journals.plos.org/plosbiology/article/file?id=10.1371/journal.pbio.2000797.g003&type=large" width="900px" style="display: block; margin: auto;" /></p>
+
+<p><a href='https://doi.org/10.1371/journal.pbio.2000797' title=''><span class="cite">(Szucs &amp; Ioannidis, 2017)</span></a></p></div>
+
+</article></slide><slide class=""><hgroup><h2>Yes, but…</h2></hgroup><article  id="yes-but">
+
+<ul>
+<li>Sharing difficult, time-consuming</li>
+<li>Openness not yet rewarded, highly valued</li>
+<li>Collecting new data better (for me) than cleaning-up finished studies to share them</li>
+<li>I’ll share with X but not with Y</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<ul>
+<li>I’ll change when..
+
+<ul>
+<li>the field does/I graduate or get tenure or/I’m finished with my data…</li>
+</ul></li>
+<li>I can’t share because…
+
+<ul>
+<li>I don’t have permission from IRB/participants/collaborators</li>
+</ul></li>
+<li>I own my data…
+
+<ul>
+<li>don’t I?</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<div style="text-align: center" class="figure">
+<img src="img/gilmore-cole-et-al.png" alt="[[@Gilmore2020-sl]](http://dx.doi.org/10.1111/cdep.12360)" width="800px" />
+
+<p class="caption">
+
+<a href='http://dx.doi.org/10.1111/cdep.12360' title=''><span class="cite">(R. O. Gilmore et al., 2020)</span></a>
+
+</p></div>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Databrary.org</h2></hgroup><article  id="databrary.org">
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<iframe src="https://nyu.databrary.org" height="600px" width="1000px">
+
+</iframe>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<ul>
+<li>World’s only data library specialized for storing and sharing video and audio + <span color="red">
+related data</span> from research on humans</li>
+<li>Hosted at New York University</li>
+<li>Opened 2014</li>
+<li>598 institutions; 1803 researchers; 61,236 hours of video + other data; 581 shared projects</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Video and audio data pose special risks</h2></hgroup><article  id="video-and-audio-data-pose-special-risks">
+
+<ul>
+<li>Faces &amp; voices</li>
+<li>Names, personal locations</li>
+<li>Behaviors</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Video data have unique research potential</h2></hgroup><article  id="video-data-have-unique-research-potential">
+
+<p>as <strong>data</strong>…</p>
+
+<ul>
+<li>Spatially &amp; temporally dense samples of behavior</li>
+<li>&ldquo;Outputs&rdquo; of biological processes</li>
+</ul>
+
+<p><a href='https://www.apa.org/science/about/psa/2017/10/video-data' title=''><span class="cite">(Adolph, K.E., Gilmore, R.O., &amp; Kennedy, J.L., 2017)</span></a></p>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<p>and as <strong>documentation</strong>…</p>
+
+<ul>
+<li>How procedures are <a href='https://www.play-project.org/collection.html' title=''>actually done</a></li>
+<li>What computer-based <a href='https://nyu.databrary.org/volume/31' title=''>tasks</a> actually look or sound like</li>
+</ul>
+
+<p><a href='https://doi.org/10.1038/s41562-017-0128' title=''><span class="cite">(Gilmore &amp; Adolph, 2017)</span></a></p>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<div style="text-align: center" class="figure">
+<img src="https://nyu.databrary.org/slot/14554/-/asset/61306/download?inline=true" alt="[[@Mota]](http://doi.org/10.17910/B7.272)" width="900px" />
+
+<p class="caption">
+
+<a href='http://doi.org/10.17910/B7.272' title=''><span class="cite">(Mota-Mena &amp; Scherf, 2016)</span></a>
+
+</p></div>
+
+</article></slide><slide class=""><hgroup><h2>How Databrary protects personal data</h2></hgroup><article  id="how-databrary-protects-personal-data">
+
+<ul>
+<li>Shared only with participant permission (&amp; IRB approval)</li>
+<li>Provide <a href='https://www.databrary.org/support/irb/release-template.html' title=''>template language</a>, <a href='https://www.databrary.org/support/irb/script.html' title=''>scripts</a> and <a href='https://www.databrary.org/video/example-video-1.mp4' title=''>procedure documentation</a></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Share openly (but with restricted audiences)</h2></hgroup><article  id="share-openly-but-with-restricted-audiences">
+
+<ul>
+<li>Researchers require institutional authorization</li>
+<li><a href='https://www.databrary.org/about/agreement.html' title=''>Formal access agreement</a></li>
+<li>Site-wide access, not dataset-specific</li>
+<li>Generic uses</li>
+<li><strong>Not limited to video &amp; audio!</strong></li>
+<li>Fosters data re-use and contribution</li>
+</ul>
+
+<!-- ## Virtues -->
+
+<!-- - Restricted data sharing has long track-record (e.g., [ICPSR](https://www.icpsr.umich.edu/)) -->
+
+<!-- - Consistent [sharing permission](https://www.databrary.org/support/irb/release-levels.html) clarifies nature of risk -->
+
+<!-- - Empowers participants -->
+
+<!-- - Researchers & institutions determine what to share & when -->
+
+<!-- --- -->
+
+<!-- - Open, but not public, sharing -->
+
+<!-- - More secure than public data and materials services or journal web pages -->
+
+<!-- - Researchers, Institutions need not reinvent wheels -->
+
+<!-- - More discoverable than personal websites or institutional repositories -->
+
+<!-- - Allows smaller-scale programs of research to contribute -->
+
+<!-- --- -->
+
+<!-- - Consistent curation (and [sharing permissions](https://www.databrary.org/support/irb/release-levels.html)) make reuse easier -->
+
+<!-- - Works for data beyond video -->
+
+<!-- - Secure data interaction via API -->
+
+</article></slide><slide class=""><hgroup><h2>Access data via reproducible API commands</h2></hgroup><article  id="access-data-via-reproducible-api-commands">
+
+<pre class = 'prettyprint lang-r'>databraryapi::get_db_stats()</pre>
+
+<pre >##                  date investigators affiliates
+## 1 2020-10-06 14:46:16          1204        599
+##   institutions datasets_total datasets_shared n_files
+## 1          598           1145             581  129002
+##      hours       TB
+## 1 61235.98 26.84145</pre>
+
+<p><a href='https://play-behaviorome.github.io/databraryapi/' title=''><span class="cite">(R. Gilmore, 2020)</span></a></p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Toward a more perfect workflow</h2></hgroup><article  id="toward-a-more-perfect-workflow">
+
+</article></slide><slide class=""><hgroup><h2>Practices</h2></hgroup><article  id="practices">
+
+<ul>
+<li>Reproducibility, transparency, and openness</li>
+<li>Exploit the web</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<ul>
+<li>Use R Markdown documents as lab/project notebooks</li>
+<li>Give every new project
+
+<ul>
+<li>A repo on GitHub</li>
+<li>A new project in RStudio</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>What’s reproducibility?</h2></hgroup><article  id="whats-reproducibility">
+
+</article></slide><slide class=""><hgroup><h2><em>Methods</em> reproducibility</h2></hgroup><article  id="methods-reproducibility">
+
+<ul>
+<li>Enough details about materials &amp; methods recorded (&amp; reported)</li>
+<li>Same results with same materials &amp; methods</li>
+</ul>
+
+<p><small><a href='http://doi.org/10.1126/scitranslmed.aaf5027' title=''>Goodman et al., 2016</a></small></p>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<div class="centered">
+<p><img src="http://lh6.ggpht.com/_KVa1Tk_k1BU/TTjL-RSY_eI/AAAAAAAABtg/VQIfae1_wtQ/hit_thumb%5B3%5D.jpg?imgmax=800" height=550></p></div>
+
+<aside class='note'><section><p>I like to call this the &ldquo;hit by a truck&rdquo; scenario.</p></section></aside>
+
+</article></slide><slide class=""><hgroup><h2><em>Results</em> reproducibility</h2></hgroup><article  id="results-reproducibility">
+
+<ul>
+<li>Same results from independent study</li>
+</ul>
+
+<p><small><a href='http://doi.org/10.1126/scitranslmed.aaf5027' title=''>Goodman et al., 2016</a></small></p>
+
+</article></slide><slide class=""><hgroup><h2><em>Inferential</em> reproducibility</h2></hgroup><article  id="inferential-reproducibility">
+
+<ul>
+<li>Same inferences from one or more studies or reanalyses</li>
+</ul>
+
+<p><small><a href='http://doi.org/10.1126/scitranslmed.aaf5027' title=''>Goodman et al., 2016</a></small></p>
+
+</article></slide><slide class=""><hgroup><h2>What’s a reproducible workflow?</h2></hgroup><article  id="whats-a-reproducible-workflow">
+
+<ul>
+<li>Data in interoperable formats (.txt or .csv)</li>
+<li>Scripted, automated == minimize human-dependent steps</li>
+<li>Well-documented</li>
+<li>Kind to your future (forgetful) self</li>
+<li>Transparent to me &amp; colleagues == transparent to others</li>
+</ul>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Why R?</h2></hgroup><article  id="why-r">
+
+</article></slide><slide class=""><hgroup><h2>Aspirations &amp; Philosophy</h2></hgroup><article  id="aspirations-philosophy">
+
+<ul>
+<li>You <strong>can</strong> learn to program</li>
+<li>You <strong>should</strong> learn to program</li>
+<li>R is a good language for learning programming
+
+<ul>
+<li>Especially if you work with data</li>
+</ul></li>
+<li>R makes it easy to produce open, transparent, &amp; reproducible workflows</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>The Story of R</h2></hgroup><article  id="the-story-of-r">
+
+<ul>
+<li>What is R?
+
+<ul>
+<li>Programming language written by and for statisticians and data scientists</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<ul>
+<li>Why is it called R?
+
+<ul>
+<li>TLDR: it’s the free, open-source version of a commercial program called S developed in the 1970s at Bell Labs</li>
+<li>Bell Labs is also the home of C, and the Unix operating system</li>
+</ul></li>
+<li>Core language + 1,000s of packages</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>The storRy of R</h2></hgroup><article  id="the-storry-of-r">
+
+<div style="text-align: center" class="figure">
+<img src="https://images-na.ssl-images-amazon.com/images/I/41ZHVS1JSHL._SX293_BO1,204,203,200_.jpg" alt="https://www.amazon.co.uk/Story-R-Gaia-Servadio/dp/0330332031"  />
+
+<p class="caption">
+
+<a href='https://www.amazon.co.uk/Story-R-Gaia-Servadio/dp/0330332031' title=''>https://www.amazon.co.uk/Story-R-Gaia-Servadio/dp/0330332031</a>
+
+</p></div>
+
+</article></slide><slide class=""><hgroup><h2>The Story of R</h2></hgroup><article  id="the-story-of-r-1">
+
+<ul>
+<li>Features of R
+
+<ul>
+<li>Written in C, Fortran, and R</li>
+<li><a href='https://www.tiobe.com/tiobe-index/' title=''>9th most popular</a> programming language</li>
+<li>Base R (now 4.0.2) + thousands of packages</li>
+<li>Object-oriented
+
+<ul>
+<li><code>my_plot &lt;- hist(rnorm(n=100, mean=0, sd=1))</code></li>
+</ul></li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<p><img src="index_files/figure-html/unnamed-chunk-11-1.png" width="720" style="display: block; margin: auto;" /></p>
+
+<pre >## $breaks
+##  [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5
+## [11]  2.0  2.5  3.0  3.5
+## 
+## $counts
+##  [1]   4  18  53 103 138 203 167 152 106  35  17   2   2
+## 
+## $density
+##  [1] 0.008 0.036 0.106 0.206 0.276 0.406 0.334 0.304 0.212
+## [10] 0.070 0.034 0.004 0.004
+## 
+## $mids
+##  [1] -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
+## [10]  1.75  2.25  2.75  3.25
+## 
+## $xname
+## [1] &quot;rnorm(n = 1000, mean = 0, sd = 1)&quot;
+## 
+## $equidist
+## [1] TRUE
+## 
+## attr(,&quot;class&quot;)
+## [1] &quot;histogram&quot;</pre>
+
+</article></slide><slide class=""><hgroup><h2>What is RStudio</h2></hgroup><article  id="what-is-rstudio">
+
+<ul>
+<li>Integrated Development Environment (IDE) for using R.
+
+<ul>
+<li>Editor</li>
+<li>Console</li>
+<li>Version control</li>
+<li>Help</li>
+</ul></li>
+<li>Free + paid versions</li>
+<li>Install on local computer or use <a href='https://lxclusterapps.tlt.psu.edu:8787/' title=''>PSU’s cloud</a></li>
+</ul>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>How R?</h2></hgroup><article  id="how-r">
+
+</article></slide><slide class=""><hgroup><h2>Psychology Department Resources</h2></hgroup><article  id="psychology-department-resources">
+
+<ul>
+<li><a href='https://github.com/psu-psychology' title=''>https://github.com/psu-psychology</a></li>
+<li><a href='https://psu-psychology.github.io/psy-525-reproducible-research-2020/' title=''>https://psu-psychology.github.io/psy-525-reproducible-research-2020/</a></li>
+<li><a href='https://psu-psychology.github.io/r-bootcamp-2019/' title=''>https://psu-psychology.github.io/r-bootcamp-2019/</a>
+
+<ul>
+<li><a href='https://psu-psychology.github.io/r-bootcamp-2019/talks/slow-r.html' title=''>Slow-R</a></li>
+<li><a href='https://psu-psychology.github.io/r-bootcamp-2019/talks/r-eproducible-science.html' title=''>R-eproducible Science</a></li>
+</ul></li>
+<li><a href='https://psu-psychology.github.io/r-bootcamp-2018' title=''>https://psu-psychology.github.io/r-bootcamp-2018</a></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>DataCamp</h2></hgroup><article  id="datacamp">
+
+<div style="text-align: center" class="figure">
+<img src="img/datacamp.png" alt="https://datacamp.com" width="600px" />
+
+<p class="caption">
+
+<a href='https://datacamp.com' title=''>https://datacamp.com</a>
+
+</p></div>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Let’s open (&amp; strengthen) psychological science</h2></hgroup><article  id="lets-open-strengthen-psychological-science">
+
+</article></slide><slide class=""><hgroup><h2>Share our own data and materials</h2></hgroup><article  id="share-our-own-data-and-materials">
+
+<ul>
+<li><a href='https://databrary.org' title=''>Databrary</a>
+
+<ul>
+<li>Data that should be restricted</li>
+<li>Start with procedure videos, displays</li>
+</ul></li>
+<li><a href='https://osf.io' title=''>Open Science Framework (OSF)</a></li>
+<li><a href='https://openneuro.org' title=''>OpenNeuro</a></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Write and share reproducible analysis &amp; display code</h2></hgroup><article  id="write-and-share-reproducible-analysis-display-code">
+
+<ul>
+<li><a href='https://psychtoolbox.org' title=''>Psychophysics Toolbox</a>, <a href='https://psychopy.org' title=''>Psychopy</a>, E-Prime</li>
+<li><a href='https://github.com' title=''>Github</a>, <a href='https://gitlab.com' title=''>Gitlab</a></li>
+<li>MATLAB, R, Python, shell scripts; but also SPSS, SAS, …</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Change the scientific culture…</h2></hgroup><article  id="change-the-scientific-culture">
+
+<ul>
+<li>Reuse shared data</li>
+<li>Cite colleagues’ data &amp; materials
+
+<ul>
+<li>e.g., <a href='https://www.R-project.org/' title=''><span class="cite">(R Core Team, 2019)</span></a>; <a href='https://bookdown.org/yihui/rmarkdown' title=''><span class="cite">(Xie, Allaire, &amp; Grolemund, 2018)</span></a>; <a href='rmarkdown-pkg' title=''><span class="cite">(Allaire et al., 2020)</span></a>; <a href='http://github.com/PLAY-behaviorome/databraryapi' title=''><span class="cite">(R. Gilmore, 2020)</span></a></li>
+</ul></li>
+<li>Add open science contributions to our websites, CVs, etc.</li>
+<li>Urge professional societies and journals to adopt open science policies, e.g. <a href='https://www.srcd.org/policy-scientific-integrity-transparency-and-openness' title=''><span class="cite">(SRCD, 2019)</span></a></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Use video</h2></hgroup><article  id="use-video">
+
+<ul>
+<li>to document and share procedures</li>
+<li>to capture and describe a broader range of participants’ behaviors</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>You R ready to do it!</h2></hgroup><article  id="you-r-ready-to-do-it">
+
+<div class="centered">
+<p></br> rog1@psu.edu</br></br> gilmore-lab.github.io</br></br> github.com/gilmore-lab</p></div>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Resources</h2></hgroup><article  id="resources">
+
+</article></slide><slide class=""><hgroup><h2>Software</h2></hgroup><article  id="software">
+
+<!-- Scrolling slides -->
+
+<!-- http://stackoverflow.com/q/38260799 -->
+
+<style>
+slides > slide { overflow: scroll; }
+slides > slide:not(.nobackground):before {
+  background: none;
+  }
+slides > slide:not(.nobackground):after {
+  content: '';
+  background: none;
+  }
+}
+</style>
+
+<p>This talk was produced on 2020-10-06 in <a href='http://rstudio.com' title=''>RStudio</a> using R Markdown. The code and materials used to generate the slides may be found at <a href='https://github.com/gilmore-lab/2020-10-07-why-r' title=''>https://github.com/gilmore-lab/2020-10-07-why-r</a>. Information about the R Session that produced the code is as follows:</p>
+
+<pre >## R version 3.6.2 (2019-12-12)
+## Platform: x86_64-apple-darwin15.6.0 (64-bit)
+## Running under: macOS Catalina 10.15.7
+## 
+## Matrix products: default
+## BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets 
+## [6] methods   base     
+## 
+## other attached packages:
+## [1] qrcode_0.1.1
+## 
+## loaded via a namespace (and not attached):
+##  [1] png_0.1-7          packrat_0.5.0     
+##  [3] digest_0.6.25      mime_0.9          
+##  [5] R.methodsS3_1.8.1  R6_2.4.1          
+##  [7] jsonlite_1.7.1     magrittr_1.5      
+##  [9] evaluate_0.14      highr_0.8         
+## [11] httr_1.4.2         rlang_0.4.7       
+## [13] stringi_1.5.3      curl_4.3          
+## [15] R.oo_1.24.0        R.utils_2.10.1    
+## [17] databraryapi_0.2.3 rmarkdown_2.3     
+## [19] tools_3.6.2        stringr_1.4.0     
+## [21] xfun_0.17          yaml_2.2.1        
+## [23] compiler_3.6.2     base64enc_0.1-3   
+## [25] htmltools_0.5.0    knitr_1.29</pre>
+
+<pre >## Logout Successful.</pre>
+
+<pre >## [1] TRUE</pre>
+
+</article></slide><slide class=""><hgroup><h2>References</h2></hgroup><article  class="unnumbered smaller" id="references">
+
+<div class="references hanging-indent" id="refs">
+<div id="ref-Adolph_KE_Gilmore_RO_Kennedy_JL2017-va">
+<p>Adolph, K.E., Gilmore, R.O., &amp; Kennedy, J.L. (2017). Video as data and documentation will improve psychological science. <a href='https://www.apa.org/science/about/psa/2017/10/video-data' title=''>https://www.apa.org/science/about/psa/2017/10/video-data</a>. Retrieved from <a href='https://www.apa.org/science/about/psa/2017/10/video-data' title=''>https://www.apa.org/science/about/psa/2017/10/video-data</a></p></div>
+
+<div id="ref-rmarkdown-pkg">
+<p>Allaire, J., Xie, Y., McPherson, J., Luraschi, J., Ushey, K., Atkins, A., … Iannone, R. (2020). <em>Rmarkdown: Dynamic documents for r</em>. Retrieved from <a href='https://github.com/rstudio/rmarkdown' title=''>https://github.com/rstudio/rmarkdown</a></p></div>
+
+<div id="ref-databraryapi">
+<p>Gilmore, R. (2020). <em>Databraryapi: Control the Databrary API</em>. Retrieved from <a href='http://github.com/PLAY-behaviorome/databraryapi' title=''>http://github.com/PLAY-behaviorome/databraryapi</a></p></div>
+
+<div id="ref-Gilmore2017-wd">
+<p>Gilmore, R. O., &amp; Adolph, K. E. (2017). Video can make behavioural science more reproducible. <em>Nature Human Behavior</em>, <em>1</em>. <a href='https://doi.org/10.1038/s41562-017-0128' title=''>https://doi.org/10.1038/s41562-017-0128</a></p></div>
+
+<div id="ref-Gilmore2020-sl">
+<p>Gilmore, R. O., Cole, P. M., Verma, S., Aken, M. A. G., &amp; Worthman, C. M. (2020). Advancing scientific integrity, transparency, and openness in child development research: Challenges and possible solutions. <em>Child Development Perspectives</em>, <em>14</em>(1), 9–14. <a href='https://doi.org/10.1111/cdep.12360' title=''>https://doi.org/10.1111/cdep.12360</a></p></div>
+
+<div id="ref-Mota">
+<p>Mota-Mena, N., &amp; Scherf, K. S. (2016). Pubertal development shapes perception of complex facial expressions. <em>Databrary</em>. <a href='https://doi.org/10.17910/B7.272' title=''>https://doi.org/10.17910/B7.272</a></p></div>
+
+<div id="ref-r-lang">
+<p>R Core Team. (2019). <em>R: A language and environment for statistical computing</em>. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from <a href='https://www.R-project.org/' title=''>https://www.R-project.org/</a></p></div>
+
+<div id="ref-Rosenthal1979-zi">
+<p>Rosenthal, R. (1979). The file drawer problem and tolerance for null results. <em>Psychological Bulletin</em>, <em>86</em>(3), 638–641. <a href='https://doi.org/10.1037/0033-2909.86.3.638' title=''>https://doi.org/10.1037/0033-2909.86.3.638</a></p></div>
+
+<div id="ref-Srcd2019-hg">
+<p>SRCD. (2019). Policy on scientific integrity, transparency, and openness | society for Research in Child Development SRCD. <a href='https://www.srcd.org/policy-scientific-integrity-transparency-and-openness' title=''>https://www.srcd.org/policy-scientific-integrity-transparency-and-openness</a>. Retrieved from <a href='https://www.srcd.org/policy-scientific-integrity-transparency-and-openness' title=''>https://www.srcd.org/policy-scientific-integrity-transparency-and-openness</a></p></div>
+
+<div id="ref-Szucs2017-fc">
+<p>Szucs, D., &amp; Ioannidis, J. P. A. (2017). Empirical assessment of published effect sizes and power in the recent cognitive neuroscience and psychology literature. <em>PLoS Biology</em>, <em>15</em>(3), e2000797. <a href='https://doi.org/10.1371/journal.pbio.2000797' title=''>https://doi.org/10.1371/journal.pbio.2000797</a></p></div>
+
+<div id="ref-rmarkdown-bk">
+<p>Xie, Y., Allaire, J. J., &amp; Grolemund, G. (2018). <em>R markdown: The definitive guide</em>. Boca Raton, Florida: Chapman; Hall/CRC. Retrieved from <a href='https://bookdown.org/yihui/rmarkdown' title=''>https://bookdown.org/yihui/rmarkdown</a></p></div></div></article></slide>
+
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!-- map slide visiblity events into shiny -->
+<script>
+  (function() {
+    if (window.jQuery) {
+       window.jQuery(document).on('slideleave', function(e) {
+         window.jQuery(e.target).trigger('hidden');
+      });
+       window.jQuery(document).on('slideenter', function(e) {
+         window.jQuery(e.target).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
