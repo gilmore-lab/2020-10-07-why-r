@@ -120,7 +120,7 @@ slide:not(.current) .plotly.html-widget{
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">2020-10-07 11:59:33</p>
+            <p style="margin-top: 6px; margin-left: -2px;">2020-10-07 12:14:19</p>
           </hgroup>
   </slide>
 
@@ -190,7 +190,7 @@ slide:not(.current) .plotly.html-widget{
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
 
-<div style="text-align: center" class="figure">
+<div class="figure" style="text-align: center">
 <img src="img/rosenthal-1979-file-drawer-problem.png" alt="[[@Rosenthal1979-zi]](https://doi.org/10.1037/0033-2909.86.3.638)" width="900px" />
 
 <p class="caption">
@@ -230,7 +230,7 @@ slide:not(.current) .plotly.html-widget{
 <li>I’ll change when..
 
 <ul>
-<li>the field does/I graduate or get tenure or/I’m finished with my data…</li>
+<li>the field does/I get tenure/I’m finished with my data…</li>
 </ul></li>
 <li>I can’t share because…
 
@@ -246,7 +246,7 @@ slide:not(.current) .plotly.html-widget{
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
 
-<div style="text-align: center" class="figure">
+<div class="figure" style="text-align: center">
 <img src="img/gilmore-cole-et-al.png" alt="[[@Gilmore2020-sl]](http://dx.doi.org/10.1111/cdep.12360)" width="800px" />
 
 <p class="caption">
@@ -305,7 +305,7 @@ related data</span> from research on humans</li>
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
 
-<div style="text-align: center" class="figure">
+<div class="figure" style="text-align: center">
 <img src="https://nyu.databrary.org/slot/14554/-/asset/61306/download?inline=true" alt="[[@Mota]](http://doi.org/10.17910/B7.272)" width="900px" />
 
 <p class="caption">
@@ -327,10 +327,46 @@ related data</span> from research on humans</li>
 <li>Researchers require institutional authorization</li>
 <li><a href='https://www.databrary.org/about/agreement.html' title=''>Formal access agreement</a></li>
 <li>Site-wide access, not dataset-specific</li>
-<li>Generic uses</li>
+<li>Generic research uses</li>
 <li><strong>Not limited to video &amp; audio!</strong></li>
-<li>Fosters data re-use and contribution</li>
 </ul>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<table class = 'rmdtable'>
+<tr class="header">
+<th align="left">asset_type</th>
+<th align="left">total_files</th>
+</tr>
+<tr class="odd">
+<td align="left">Datavyu</td>
+<td align="left">2314</td>
+</tr>
+<tr class="even">
+<td align="left">CSV</td>
+<td align="left">1743</td>
+</tr>
+<tr class="odd">
+<td align="left">PNG</td>
+<td align="left">1439</td>
+</tr>
+<tr class="even">
+<td align="left">CHAT</td>
+<td align="left">314</td>
+</tr>
+<tr class="odd">
+<td align="left">TXT</td>
+<td align="left">278</td>
+</tr>
+<tr class="even">
+<td align="left">Excel</td>
+<td align="left">191</td>
+</tr>
+<tr class="odd">
+<td align="left">SPSS</td>
+<td align="left">16</td>
+</tr>
+</table>
 
 <!-- ## Virtues -->
 
@@ -366,32 +402,22 @@ related data</span> from research on humans</li>
 
 <pre class = 'prettyprint lang-r'>databraryapi::get_db_stats()</pre>
 
-<pre >##                  date investigators affiliates institutions datasets_total
-## 1 2020-10-07 11:59:34          1204        601          598           1145
-##   datasets_shared n_files    hours       TB
-## 1             581  129106 61298.86 26.86257</pre>
+<pre >##                  date investigators affiliates
+## 1 2020-10-07 12:14:20          1204        601
+##   institutions datasets_total datasets_shared
+## 1          598           1145             581
+##   n_files    hours       TB
+## 1  129106 61298.86 26.86257</pre>
 
 <p><a href='https://play-behaviorome.github.io/databraryapi/' title=''><span class="cite">(R. Gilmore, 2020)</span></a></p>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Toward a more perfect workflow</h2></hgroup><article  id="toward-a-more-perfect-workflow">
 
-</article></slide><slide class=""><hgroup><h2>Practices</h2></hgroup><article  id="practices">
+</article></slide><slide class=""><hgroup><h2>Best practices</h2></hgroup><article  id="best-practices">
 
 <ul>
-<li>Reproducibility, transparency, and openness</li>
-<li>Exploit the web</li>
-</ul>
-
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
-
-<ul>
-<li>Use R Markdown documents as lab/project notebooks</li>
-<li>Give every new project
-
-<ul>
-<li>A repo on GitHub</li>
-<li>A new project in RStudio</li>
-</ul></li>
+<li>Reproducibility, transparency, and openness -&gt;</li>
+<li>Robust findings &amp; accelerated discovery</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>What’s reproducibility?</h2></hgroup><article  id="whats-reproducibility">
@@ -477,7 +503,7 @@ related data</span> from research on humans</li>
 
 </article></slide><slide class=""><hgroup><h2>The storRy of R</h2></hgroup><article  id="the-storry-of-r">
 
-<div style="text-align: center" class="figure">
+<div class="figure" style="text-align: center">
 <img src="https://images-na.ssl-images-amazon.com/images/I/41ZHVS1JSHL._SX293_BO1,204,203,200_.jpg" alt="https://www.amazon.co.uk/Story-R-Gaia-Servadio/dp/0330332031"  />
 
 <p class="caption">
@@ -508,18 +534,20 @@ related data</span> from research on humans</li>
 <p><img src="index_files/figure-html/unnamed-chunk-11-1.png" width="720" style="display: block; margin: auto;" /></p>
 
 <pre >## $breaks
-##  [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
+##  [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5
+## [10]  1.0  1.5  2.0  2.5  3.0  3.5  4.0  4.5
 ## 
 ## $counts
-##  [1]   2   7  15  42  84 143 194 203 154  89  44  17   6
+##  [1]   1   4  17  41 100 148 208 189 142  78  44  19
+## [13]   6   1   0   2
 ## 
 ## $density
-##  [1] 0.004 0.014 0.030 0.084 0.168 0.286 0.388 0.406 0.308 0.178 0.088 0.034
-## [13] 0.012
+##  [1] 0.002 0.008 0.034 0.082 0.200 0.296 0.416 0.378
+##  [9] 0.284 0.156 0.088 0.038 0.012 0.002 0.000 0.004
 ## 
 ## $mids
-##  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
-## [13]  2.75
+##  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25
+##  [9]  0.75  1.25  1.75  2.25  2.75  3.25  3.75  4.25
 ## 
 ## $xname
 ## [1] &quot;rnorm(n = 1000, mean = 0, sd = 1)&quot;
@@ -563,7 +591,7 @@ related data</span> from research on humans</li>
 
 </article></slide><slide class=""><hgroup><h2>DataCamp</h2></hgroup><article  id="datacamp">
 
-<div style="text-align: center" class="figure">
+<div class="figure" style="text-align: center">
 <img src="img/datacamp.png" alt="https://datacamp.com" width="600px" />
 
 <p class="caption">
@@ -647,21 +675,28 @@ slides > slide:not(.nobackground):after {
 ## Running under: macOS Catalina 10.15.7
 ## 
 ## Matrix products: default
-## BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
+## BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
 ## LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
 ## 
 ## locale:
 ## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 ## 
 ## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## [1] stats     graphics  grDevices utils     datasets 
+## [6] methods   base     
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] digest_0.6.25      R6_2.4.1           jsonlite_1.7.1     magrittr_1.5      
-##  [5] evaluate_0.14      highr_0.8          httr_1.4.2         rlang_0.4.7       
-##  [9] stringi_1.5.3      curl_4.3           databraryapi_0.2.4 rmarkdown_2.3     
-## [13] tools_3.6.2        stringr_1.4.0      xfun_0.17          yaml_2.2.1        
-## [17] compiler_3.6.2     htmltools_0.5.0    knitr_1.29</pre>
+##  [1] packrat_0.5.0      digest_0.6.25     
+##  [3] R6_2.4.1           jsonlite_1.7.1    
+##  [5] magrittr_1.5       evaluate_0.14     
+##  [7] highr_0.8          httr_1.4.2        
+##  [9] rlang_0.4.7        stringi_1.5.3     
+## [11] curl_4.3           databraryapi_0.2.4
+## [13] rmarkdown_2.3      tools_3.6.2       
+## [15] stringr_1.4.0      xfun_0.17         
+## [17] yaml_2.2.1         rsconnect_0.8.16  
+## [19] compiler_3.6.2     htmltools_0.5.0   
+## [21] knitr_1.29</pre>
 
 <pre >## Logout Successful.</pre>
 

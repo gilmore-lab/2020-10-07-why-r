@@ -119,7 +119,7 @@ knitr::include_graphics("https://journals.plos.org/plosbiology/article/file?id=1
 ---
 
 - I'll change when.. 
-    - the field does/I graduate or get tenure or/I'm finished with my data...
+    - the field does/I get tenure/I'm finished with my data...
 - I can't share because...
     - I don't have permission from IRB/participants/collaborators
 - I own my data...
@@ -189,9 +189,21 @@ knitr::include_graphics("https://nyu.databrary.org/slot/14554/-/asset/61306/down
 - Researchers require institutional authorization
 - [Formal access agreement](https://www.databrary.org/about/agreement.html)
 - Site-wide access, not dataset-specific
-- Generic uses
+- Generic research uses
 - **Not limited to video & audio!**
-- Fosters data re-use and contribution
+
+---
+
+
+| asset_type |	total_files |
+|------------|--------------|
+| Datavyu	| 2314 |
+| CSV |	1743 |
+| PNG |	1439 |
+| CHAT |	314 |
+| TXT | 278 |
+| Excel | 191 |
+| SPSS | 16 |
 
 <!-- ## Virtues -->
 
@@ -224,18 +236,11 @@ databraryapi::get_db_stats()
 
 # Toward a more perfect workflow
 
-## Practices
+## Best practices
 
-- Reproducibility, transparency, and openness
-- Exploit the web
+- Reproducibility, transparency, and openness ->
+- Robust findings & accelerated discovery
     
----
-
-- Use R Markdown documents as lab/project notebooks
-- Give every new project
-    - A repo on GitHub
-    - A new project in RStudio
-
 ## What's reproducibility?
 
 ## *Methods* reproducibility
