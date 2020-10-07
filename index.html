@@ -120,7 +120,7 @@ slide:not(.current) .plotly.html-widget{
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">2020-10-06 14:46:16</p>
+            <p style="margin-top: 6px; margin-left: -2px;">2020-10-07 11:59:33</p>
           </hgroup>
   </slide>
 
@@ -270,7 +270,7 @@ slide:not(.current) .plotly.html-widget{
 related data</span> from research on humans</li>
 <li>Hosted at New York University</li>
 <li>Opened 2014</li>
-<li>598 institutions; 1803 researchers; 61,236 hours of video + other data; 581 shared projects</li>
+<li>598 institutions; 1805 researchers; 61,299 hours of video + other data; 581 shared projects</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Video and audio data pose special risks</h2></hgroup><article  id="video-and-audio-data-pose-special-risks">
@@ -366,12 +366,10 @@ related data</span> from research on humans</li>
 
 <pre class = 'prettyprint lang-r'>databraryapi::get_db_stats()</pre>
 
-<pre >##                  date investigators affiliates
-## 1 2020-10-06 14:46:16          1204        599
-##   institutions datasets_total datasets_shared n_files
-## 1          598           1145             581  129002
-##      hours       TB
-## 1 61235.98 26.84145</pre>
+<pre >##                  date investigators affiliates institutions datasets_total
+## 1 2020-10-07 11:59:34          1204        601          598           1145
+##   datasets_shared n_files    hours       TB
+## 1             581  129106 61298.86 26.86257</pre>
 
 <p><a href='https://play-behaviorome.github.io/databraryapi/' title=''><span class="cite">(R. Gilmore, 2020)</span></a></p>
 
@@ -510,19 +508,18 @@ related data</span> from research on humans</li>
 <p><img src="index_files/figure-html/unnamed-chunk-11-1.png" width="720" style="display: block; margin: auto;" /></p>
 
 <pre >## $breaks
-##  [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5
-## [11]  2.0  2.5  3.0  3.5
+##  [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
 ## 
 ## $counts
-##  [1]   4  18  53 103 138 203 167 152 106  35  17   2   2
+##  [1]   2   7  15  42  84 143 194 203 154  89  44  17   6
 ## 
 ## $density
-##  [1] 0.008 0.036 0.106 0.206 0.276 0.406 0.334 0.304 0.212
-## [10] 0.070 0.034 0.004 0.004
+##  [1] 0.004 0.014 0.030 0.084 0.168 0.286 0.388 0.406 0.308 0.178 0.088 0.034
+## [13] 0.012
 ## 
 ## $mids
-##  [1] -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
-## [10]  1.75  2.25  2.75  3.25
+##  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
+## [13]  2.75
 ## 
 ## $xname
 ## [1] &quot;rnorm(n = 1000, mean = 0, sd = 1)&quot;
@@ -643,40 +640,28 @@ slides > slide:not(.nobackground):after {
 }
 </style>
 
-<p>This talk was produced on 2020-10-06 in <a href='http://rstudio.com' title=''>RStudio</a> using R Markdown. The code and materials used to generate the slides may be found at <a href='https://github.com/gilmore-lab/2020-10-07-why-r' title=''>https://github.com/gilmore-lab/2020-10-07-why-r</a>. Information about the R Session that produced the code is as follows:</p>
+<p>This talk was produced on 2020-10-07 in <a href='http://rstudio.com' title=''>RStudio</a> using R Markdown. The code and materials used to generate the slides may be found at <a href='https://github.com/gilmore-lab/2020-10-07-why-r' title=''>https://github.com/gilmore-lab/2020-10-07-why-r</a>. Information about the R Session that produced the code is as follows:</p>
 
 <pre >## R version 3.6.2 (2019-12-12)
 ## Platform: x86_64-apple-darwin15.6.0 (64-bit)
 ## Running under: macOS Catalina 10.15.7
 ## 
 ## Matrix products: default
-## BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+## BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
 ## LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
 ## 
 ## locale:
 ## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 ## 
 ## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets 
-## [6] methods   base     
-## 
-## other attached packages:
-## [1] qrcode_0.1.1
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] png_0.1-7          packrat_0.5.0     
-##  [3] digest_0.6.25      mime_0.9          
-##  [5] R.methodsS3_1.8.1  R6_2.4.1          
-##  [7] jsonlite_1.7.1     magrittr_1.5      
-##  [9] evaluate_0.14      highr_0.8         
-## [11] httr_1.4.2         rlang_0.4.7       
-## [13] stringi_1.5.3      curl_4.3          
-## [15] R.oo_1.24.0        R.utils_2.10.1    
-## [17] databraryapi_0.2.3 rmarkdown_2.3     
-## [19] tools_3.6.2        stringr_1.4.0     
-## [21] xfun_0.17          yaml_2.2.1        
-## [23] compiler_3.6.2     base64enc_0.1-3   
-## [25] htmltools_0.5.0    knitr_1.29</pre>
+##  [1] digest_0.6.25      R6_2.4.1           jsonlite_1.7.1     magrittr_1.5      
+##  [5] evaluate_0.14      highr_0.8          httr_1.4.2         rlang_0.4.7       
+##  [9] stringi_1.5.3      curl_4.3           databraryapi_0.2.4 rmarkdown_2.3     
+## [13] tools_3.6.2        stringr_1.4.0      xfun_0.17          yaml_2.2.1        
+## [17] compiler_3.6.2     htmltools_0.5.0    knitr_1.29</pre>
 
 <pre >## Logout Successful.</pre>
 
